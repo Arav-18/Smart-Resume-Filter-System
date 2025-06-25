@@ -1,0 +1,39 @@
+Company: ABC Tech Solutions
+Location: Remote / Bangalore, India
+Position Type: Internship (3–6 months)
+Stipend: ₹15,000/month
+
+🌟 Responsibilities:
+Develop and maintain backend services using Python or Java.
+
+Work with databases like MySQL or SQLite to store and retrieve data.
+
+Collaborate with the frontend team to integrate RESTful APIs.
+
+Write clean, efficient, and scalable code with proper documentation.
+
+Perform unit testing and participate in code reviews.
+
+📌 Requirements:
+Pursuing B.E./B.Tech in Computer Science or related field (Final or Pre-final year).
+
+Strong understanding of Data Structures and Algorithms.
+
+Good knowledge of Python or Java.
+
+Familiarity with Flask/Django or Spring Boot is a plus.
+
+Basics of HTML, CSS, and JavaScript.
+
+Knowledge of Git/GitHub, basic SQL queries.
+
+Ability to work independently and in a team.
+
+Passion for backend development and eagerness to learn.
+
+🎯 Preferred Skills:
+Previous mini-projects or internships.
+
+Basic knowledge of API integration.
+
+Understanding of how web applications work.

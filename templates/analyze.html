@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Resume Filter | Result</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container-box {
+      background-color: rgba(255, 255, 255, 0.06);
+      padding: 30px;
+      border-radius: 20px;
+      margin-top: 60px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    .glow-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 0 15px #00ffe5, 0 0 30px #00ffe5;
+      margin-bottom: 20px;
+    }
+
+    .score-bar .progress {
+      height: 28px;
+    }
+
+    .score-bar .progress-bar {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-top: 30px;
+      color: #ffc;
+    }
+
+    .skill-badge {
+      background-color:rgb(97, 227, 41);
+      color: black;
+      margin: 4px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .resume-preview {
+      background-color: #101c2e;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      color: #ddd;
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 0.9rem;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-top: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #bbb;
+      font-size: 13px;
+    }
+
+    .btn-custom {
+      margin-top: 25px;
+      border-radius: 30px;
+      padding: 8px 20px;
+    }
+
+    .dropdown-menu-end {
+      right: 0;
+      left: auto;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    ul.text-light li {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container container-box">
+
+    <!-- Three-dot menu -->
+    <div class="dropdown">
+      <button class="menu-toggle dropdown-toggle" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        &#x22EE;
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
+        <li><a class="dropdown-item" href="/dashboard">📊 Recruiter Dashboard</a></li>
+        <li><a class="dropdown-item" href="/">⬆ Upload Another</a></li>
+      </ul>
+    </div>
+
+    <div class="glow-title">Smart Resume Filter Result</div>
+
+    <!-- Match Score -->
+    <div class="score-bar">
+      <h5 class="section-title">🔍 Match Score:</h5>
+      <div class="progress mb-3">
+        <div class="progress-bar bg-success" role="progressbar" style="width: {{ score }}%;" aria-valuenow="{{ score }}" aria-valuemin="0" aria-valuemax="100">
+          {{ score }}%
+        </div>
+      </div>
+    </div>
+
+    <!-- Matched Skills -->
+    <div>
+      <h5 class="section-title">🧠 Matched Skills ({{ matched_skills|length }}):</h5>
+      {% for skill in matched_skills %}
+        <span class="skill-badge" title="Matched skill">{{ skill }}</span>
+      {% endfor %}
+    </div>
+
+    <!-- Suggestions -->
+    <div>
+      <h5 class="section-title"> Suggestions to Improve:</h5>
+      {% if improvement_tips %}
+        <ul class="text-light ps-3">
+          {% for tip in improvement_tips %}
+            <li>{{ tip }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No suggestions found.</p>
+      {% endif %}
+    </div>
+
+    <!-- Recommendation -->
+    <div>
+      <h5 class="section-title"> Recommendation:</h5>
+      <p class="fw-bold text-warning">{{ recommendation }}</p>
+    </div>
+
+    <!-- Resume Preview -->
+    <h4 class="mt-4">📄 Full Resume Preview:</h4>
+    <div class="resume-preview">{{ resume_text|safe }}</div>
+
+    <!-- Navigation Buttons -->
+    <div class="text-center mt-4">
+      <a href="/export" class="btn btn-success btn-custom">⬇ Download CSV</a>
+      <a href="/dashboard" class="btn btn-warning btn-custom">📊 View Dashboard</a>
+    </div>
+
+    <div class="text-start">
+      <a href="/" class="btn btn-outline-light btn-custom">⬅ Upload Another</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Smart Resume Filter | Designed for better job matching 🔍✨
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
