@@ -17,7 +17,7 @@
 
 ## 👨‍💻 About Me
 
-I am **Aravendganesh KS**, a 3rd-year student from the Computer Science and Business Systems (CSBS) department.  
+I am **Aravendganesh KS**, a 4th-year student from the Computer Science and Business Systems (CSBS) department.  
 This project was developed as part of my industrial training to solve real-world problems in the recruitment domain using a rule-based resume filtering system.
 
 ---
