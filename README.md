@@ -32,14 +32,14 @@ It extracts key information from resumes and compares them to job descriptions (
 ## 🔍 Features
 
 - 📄 Upload resumes in `.pdf` or `.txt` formats along with job descriptions
-- 🧠 Extracts skills and keywords from both documents
-- ✨ Highlights matched keywords in the resume preview
+-  Extracts skills and keywords from both documents
+-  Highlights matched keywords in the resume preview
 - 📊 Calculates a match score between resume and job description
 - 💡 Provides personalized improvement suggestions
-- 📌 Generates recruiter recommendations
-- 💾 Stores all results in a SQLite database
+-  Generates recruiter recommendations
+-  Stores all results in a SQLite database
 - 📋 Recruiter dashboard with filtering, deletion, CSV export
-- 🥧 Pie chart visualization of score distribution
+-  Pie chart visualization of score distribution
 
 ---
 
